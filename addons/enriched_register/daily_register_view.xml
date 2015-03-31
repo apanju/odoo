@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="register_tree" model="ir.ui.view">
+            <field name="name">enriched_register_tree</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <tree string="Employee attendances">
+                    <field name="name"/>
+                    <field name="register_state"/>
+                    <field name="department_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="register_tree_filter" model="ir.ui.view">
+            <field name="name">enriched_register_tree_filter</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <search string="Enriched Register Search">
+                    <field name="name" string="Attendance"/>
+                    <field name="department_id"/>
+                    <field name="register_state"/>
+                    <group expand="0" string="Group By">
+                        <filter name="employee" string="Employee" context="{'group_by':'name'}"/>
+                        <separator/>
+                        <filter name="department" string="Department" context="{'group_by':'department_id'}"/>
+                        <separator/>
+                        <filter string="Not on leave" name="not_on_leave" domain="['|', ('register_state','=', 'absent'), ('register_state','=', 'present')]" help="No on leave"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="open_register_tree_filter" model="ir.actions.act_window">
+            <field name="name">Daily Register</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_not_on_leave":1}</field>
+            <field name="search_view_id" ref="register_tree_filter" />
+        </record>
+
+        <menuitem action="open_register_tree_filter" id="menu_open_register_tree_filter" parent="hr_attendance.menu_hr_attendance" sequence="30" groups="base.group_hr_attendance"/>
+
+        <record id="action_sign_in" model="ir.actions.server">
+            <field name="name">Sign-in Employees</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="code">
+                if context.get('active_model') == 'hr.employee':
+                    ids = []
+                    if context.get('active_domain'):
+                        ids = self.search(cr, uid, context['active_domain'], context=context)
+                    elif context.get('active_ids'):
+                        ids = context['active_ids']
+                    if ids:
+                        self.pool.get('hr.employee').attendance_action_force_sign_in(cr, uid, ids, context=context)
+            </field>
+        </record>
+
+        <record model="ir.values" id="ir_assign_sign_in">
+            <field name="name">Sign-in Employees</field>
+            <field name="value" eval="'ir.actions.server,%d'%action_sign_in"/>
+            <field name="model_id" ref="model_hr_employee" />
+            <field name="model">hr.employee</field>
+            <field name="key">action</field>
+            <field name="key2">client_action_multi</field>
+        </record>
+
+    </data>
+</openerp>
