@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data  noupdate="1">
+        <!-- Project Phases -->
+
+        <record id="project_phase_lead" model="enriched_project.project_phase">
+            <field name="sequence">10</field>
+            <field name="name">Lead</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_pre_sales" model="enriched_project.project_phase">
+            <field name="sequence">20</field>
+            <field name="name">Pre-Sales</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_measurements_taken" model="enriched_project.project_phase">
+            <field name="sequence">30</field>
+            <field name="name">Measurements Taken</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_quoted" model="enriched_project.project_phase">
+            <field name="sequence">40</field>
+            <field name="name">Quoted</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_confirmed" model="enriched_project.project_phase">
+            <field name="sequence">50</field>
+            <field name="name">Confirmed</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_scheduled" model="enriched_project.project_phase">
+            <field name="sequence">60</field>
+            <field name="name">Work Scheduled / Fabrication</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_on_site" model="enriched_project.project_phase">
+            <field name="sequence">70</field>
+            <field name="name">On Site</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_work_complete" model="enriched_project.project_phase">
+            <field name="sequence">80</field>
+            <field name="name">Work Complete</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_payment_complete" model="enriched_project.project_phase">
+            <field name="sequence">90</field>
+            <field name="name">Payment Complete</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_retention_chase" model="enriched_project.project_phase">
+            <field name="sequence">100</field>
+            <field name="name">Retention Chase Up</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_closed" model="enriched_project.project_phase">
+            <field name="sequence">110</field>
+            <field name="name">Closed</field>
+            <field name="description"></field>
+        </record>
+        <record id="project_phase_cancelled" model="enriched_project.project_phase">
+            <field name="sequence">120</field>
+            <field name="name">Cancelled</field>
+            <field name="description"></field>
+        </record>
+
+    </data>
+</openerp>

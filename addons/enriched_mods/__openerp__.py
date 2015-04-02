@@ -7,7 +7,9 @@
     'category': 'Enriched',
     'description': """
 Add static links to other Enriched services (import, issue management)
+
 Remove some ``Phone Home`` features from core Odoo 8.0:
+-------------------------------------------------------
 * Stop Scheduler for Sending Company/Database information to Odoo/OpenERP company.
 * Remove ``Your OpenERP is not supported.``.
 * Change sequence of the ``Apps`` and ``Update`` menu and arrange ``Installed Modules`` at first position.
