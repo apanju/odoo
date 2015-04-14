@@ -25,6 +25,7 @@ New fields for taks including concept of dependant tasks
     'demo': [],
     'test': [
     ],
+    'init_xml': ['project_numbers.xml'],
     'installable': True,
     'auto_install': False,
     'application': True,
