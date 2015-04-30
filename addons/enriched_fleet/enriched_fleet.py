@@ -8,7 +8,7 @@ from dateutil.relativedelta import relativedelta
 
 class fleet_vehicle(osv.Model):
 
-    _inherit = 'fleet.fleet_vehicle'
+    _inherit = {'fleet.fleet_vehicle'}
 
     _columns = {
         'old_plate_number': fields.char('Old Plate Number'),
