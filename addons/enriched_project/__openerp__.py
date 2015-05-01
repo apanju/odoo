@@ -14,10 +14,9 @@
 Project and Task extensions to built-in Project Management
 ==========================================================
 
-New field of ``phase`` for a project
-
-New fields for taks including concept of dependant tasks
-    """,
+* New field of ``phase`` for a project
+* New fields for taks including concept of dependant tasks
+""",
     'data': [
         'enriched_project_view.xml',
         'enriched_project_data.xml'

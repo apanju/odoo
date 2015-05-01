@@ -608,7 +608,7 @@ class BaseModel(object):
         # order bases following the mro of class hierarchy
         bases = [base for base in hierarchy.mro() if base in bases]
 
-        # determine the attributes of the model's class
+        # determine the attributes of the model's class‰
         inherits = {}
         depends = {}
         constraints = {}

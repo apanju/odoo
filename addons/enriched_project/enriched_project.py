@@ -1,32 +1,5 @@
 # -*- coding: utf-8 -*-
-
-from datetime import datetime, date
-from lxml import etree
-import time
-
-from openerp import SUPERUSER_ID
-from openerp import tools
-from openerp.addons.resource.faces import task as Task
 from openerp.osv import fields, osv
-from openerp.tools.translate import _
-
-# class project(osv.osv):
-#     _description = "Project"
-#     _inherit = ['project.project']
-#
-#     _columns = {
-#         'active': fields.boolean('Active', help=""),
-#      }
-#
-#
-# class task(osv.osv):
-#     _description = "Task"
-#     _inherit = ['project.task']
-#
-#     _columns = {
-#         'phase': fields.many2one('enriched_project.project_phase', 'Phase')
-#         'depends_on': fields.many2one('project.task', 'Parent Task', )
-#     }
 
 class project_phase(osv.osv):
     _name = "enriched_project.project_phase"
@@ -45,11 +18,11 @@ class project_phase(osv.osv):
 
 class project(osv.osv):
     _description = "Project"
-    _inherit = {'project.project'}
+    _inherit = 'project.project'
 
     def _get_project_number(self, cr, uid,context, *args):
         obj_sequence = self.pool.get('ir.sequence')
-        return obj_sequence.next_by_code(cr, uid, 'enriched_project.project_number.sequence', context=context)
+        return obj_sequence.next_by_code(cr, uid, 'enrichedprojectsequencecode', context=context)
 
     _columns = {
         'role_client_qs_id': fields.many2one('res.partner', 'Client QS'),
