@@ -4,6 +4,7 @@
         <template id="assets_backend" name="enriched assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
                 <link rel="stylesheet" href="/enriched_mods/static/src/css/enriched.css"/>
+                <script type="text/javascript" src="/enriched_mods/static/src/js/enriched.js"></script>
             </xpath>
         </template>
         <template id="enriched_mods.web_layout" inherit_id="web.layout" name="Enriched Layout">
