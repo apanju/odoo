@@ -24,7 +24,6 @@ Main Features
 * Other contracts like city permits
 """,
     'data': [
-            'enriched_fleet.xml',
             'enriched_fleet_cars.xml',
             'enriched_fleet_data.xml',
             ],

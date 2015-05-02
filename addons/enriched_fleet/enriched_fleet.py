@@ -1,13 +1,7 @@
 from openerp.osv import fields, osv
-import time
-import datetime
-from openerp import tools
-from openerp.osv.orm import except_orm
-from openerp.tools.translate import _
-from dateutil.relativedelta import relativedelta
 
 class fleet_vehicle(osv.Model):
-    _inherit = 'fleet.fleet_vehicle'
+    _inherit = 'fleet.vehicle'
 
     _columns = {
         'old_plate_number': fields.char('Old Plate Number'),

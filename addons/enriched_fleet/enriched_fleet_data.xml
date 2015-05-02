@@ -46,35 +46,35 @@
         </record>
         <record id="model_corolla" model="fleet.vehicle.model">
             <field name="modelname">Corolla</field>
-            <field name="brand_id" ref="brand_toyota" />
+            <field name="brand_id" ref="fleet.brand_toyota" />
         </record>
         <record id="model_opa" model="fleet.vehicle.model">
             <field name="modelname">Opa</field>
-            <field name="brand_id" ref="brand_toyota" />
+            <field name="brand_id" ref="fleet.brand_toyota" />
         </record>
         <record id="model_prado" model="fleet.vehicle.model">
             <field name="modelname">Prado</field>
-            <field name="brand_id" ref="brand_toyota" />
+            <field name="brand_id" ref="fleet.brand_toyota" />
         </record>
         <record id="model_rav4" model="fleet.vehicle.model">
             <field name="modelname">Rav 4</field>
-            <field name="brand_id" ref="brand_toyota" />
+            <field name="brand_id" ref="fleet.brand_toyota" />
         </record>
         <record id="model_dcm" model="fleet.vehicle.model">
             <field name="modelname">DCM</field>
-            <field name="brand_id" ref="brand_toyota" />
+            <field name="brand_id" ref="fleet.brand_toyota" />
         </record>
         <record id="model_nadia" model="fleet.vehicle.model">
             <field name="modelname">Nadia</field>
-            <field name="brand_id" ref="brand_toyota" />
+            <field name="brand_id" ref="fleet.brand_toyota" />
         </record>
         <record id="model_pickup" model="fleet.vehicle.model">
             <field name="modelname">Pickup</field>
-            <field name="brand_id" ref="brand_nissan" />
+            <field name="brand_id" ref="fleet.brand_nissan" />
         </record>
         <record id="model_s500" model="fleet.vehicle.model">
             <field name="modelname">S 500</field>
-            <field name="brand_id" ref="brand_mercedes" />
+            <field name="brand_id" ref="fleet.brand_mercedes" />
         </record>
 
 
