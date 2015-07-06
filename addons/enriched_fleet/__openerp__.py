@@ -22,6 +22,7 @@ Main Features
 * Status (New, In Use, To Sell)
 * Old Plate Number
 * Other contracts like city permits
+* Number of Keys
 """,
     'data': [
             'enriched_fleet_cars.xml',

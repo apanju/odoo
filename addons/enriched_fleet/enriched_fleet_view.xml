@@ -4,7 +4,7 @@
         <record model='ir.ui.view' id='enriched_fleet_vehicle_form'>
             <field name="name">enriched_fleet.vehicle.form</field>
             <field name="model">fleet.vehicle</field>
-            <field name="priority" eval="15"/>
+            <field name="priority" eval="14"/>
             <field name="arch" type="xml">
                 <form string="Vehicle">
                     <header>
@@ -91,6 +91,7 @@
                                 </div>
                                 <field name="acquisition_date" />
                                 <field name="car_value" />
+
                             </group>
                         </group>
                         <group col="2">
@@ -98,6 +99,7 @@
                                 <field name="seats" />
                                 <field name="doors" />
                                 <field name="color" />
+                                <field name="num_keys" />
                             </group>
                             <group string="Engine Options">
                                 <field name="transmission" />

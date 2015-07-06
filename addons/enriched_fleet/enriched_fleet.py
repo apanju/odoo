@@ -8,4 +8,5 @@ class fleet_vehicle(osv.Model):
         'type':fields.selection([('car','Car'), ('bike','Bike'), ('truck','Truck'), ('minibus','Mini Bus')], 'Vehicle Type'),
         'fuel_tank_size':fields.integer('Tank Size'),
         'engine_size':fields.integer('Engine Size'),
+        'num_keys':fields.integer('Number of Keys'),
         }
