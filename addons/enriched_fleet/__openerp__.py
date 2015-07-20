@@ -8,7 +8,7 @@
     'sequence': 9,
     'summary': 'Enhanced Vehicle',
     'depends': [
-        'fleet'
+        'fleet', 'hr'
     ],
     'description': """
 Enhanced Vehicle
@@ -27,7 +27,8 @@ Main Features
     'data': [
             'enriched_fleet_cars.xml',
             'enriched_fleet_data.xml',
-            'enriched_fleet_view.xml'
+            'enriched_fleet_view.xml',
+            'enriched_fleet_driver_view.xml'
             ],
     'demo': [],
     'test': [],

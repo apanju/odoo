@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="enriched_fleet_employee" model="ir.ui.view">
+            <field name="name">enriched_fleet.employee.form1</field>
+            <field name="model">hr.employee</field>
+            <field name="priority" eval="15"/>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@string='HR Settings']" position="after">
+                    <page string="Driver Details" groups="base.group_fleet_manager">
+                        <group>
+                            <group string="Drivers Licence">
+                                <field name="drivers_licence_number"/>
+                                <field name="drivers_licence_date_from"/>
+                                <field name="drivers_licence_date_to"/>
+                            </group>
+                            <group string="Agreements">
+                                <field name="driver_agreement_signed"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</openerp>

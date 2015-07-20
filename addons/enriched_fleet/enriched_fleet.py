@@ -8,5 +8,15 @@ class fleet_vehicle(osv.Model):
         'type':fields.selection([('car','Car'), ('bike','Bike'), ('truck','Truck'), ('minibus','Mini Bus')], 'Vehicle Type'),
         'fuel_tank_size':fields.integer('Tank Size'),
         'engine_size':fields.integer('Engine Size'),
-        'num_keys':fields.integer('Number of Keys'),
+		'num_keys':fields.integer('Number of Keys'),
         }
+
+class hr_employee(osv.osv):
+    _inherit = "hr.employee"
+
+    _columns = {
+       'drivers_licence_number': fields.char('Driving Licence Number'),
+       'drivers_licence_date_from': fields.date('Driving Licence Valid From'),
+       'drivers_licence_date_to': fields.date('Driving Licence Valid To'),
+       'driver_agreement_signed': fields.binary('Drivers Agreement Signed')
+    }
