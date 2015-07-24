@@ -23,6 +23,7 @@ Main Features
 * Old Plate Number
 * Other contracts like city permits
 * Number of Keys
+* Employee Drivers Licences
 """,
     'data': [
             'enriched_fleet_cars.xml',
