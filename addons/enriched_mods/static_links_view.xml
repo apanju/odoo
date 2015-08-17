@@ -6,13 +6,13 @@
 
         <record id="open_link_issue_tracker" model="ir.actions.act_url">
             <field name="name">Open Issue Tracker</field>
-            <field name="url">http://enriched.solutions</field>
+            <field name="url">https://enriched.atlassian.net</field>
             <field name="target">new</field>
         </record>
 
         <record id="open_link_upload_biometric" model="ir.actions.act_url">
             <field name="name">Upload Biometric Data File</field>
-            <field name="url">http://oms.dsmglass.co.tz/biometric.php</field>
+            <field name="url">http://enrichedsolutions.com/dsmglass/biometric.php</field>
             <field name="target">new</field>
         </record>
 
