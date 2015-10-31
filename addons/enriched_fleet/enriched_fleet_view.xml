@@ -220,5 +220,16 @@
             </field>
         </record>
 
+        <record model='ir.ui.view' id='enriched_fleet_vehicle_tree'>
+            <field name="name">enriched_fleet.vehicle.tree</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='odometer_unit']" position="after">
+                    <field name="contract_count" />
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </openerp>
