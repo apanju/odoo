@@ -17,6 +17,18 @@
                         <field name="employee_emergency_contact_relationship"/>
                     </group>
                 </xpath>
+                <xpath expr="//field[@name='address_home_id']" position="replace">
+                    <field name="bank_account_id"/>
+                    <field name="hr_address_w3w"/>
+                    <field name="hr_is_tuico_member"/>
+                    <field name="hr_tuico_joining_date"/>
+                    <field name="hr_nssf_id"/>
+                    <field name="hr_nssf_enrolment_date"/>
+                    <field name="hr_paye_id"/>
+                    <field name="hr_paye_enrolment_date"/>
+                    <field name="hr_address"/>
+                    <field name="hr_place_of_recruitment"/>
+                </xpath>
             </field>
         </record>
 
