@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_employee_form_enriched_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.enriched.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Birth']" position="after">
+                    <group string="Details">
+                        <field name="employee_joining_date"/>
+                        <field name="employee_blood_group"/>
+                    </group>
+                    <group string="Emergency Contact">
+                        <field name="employee_emergency_contact_name"/>
+                        <field name="employee_emergency_contact_number"/>
+                        <field name="employee_emergency_contact_relationship"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='address_home_id']" position="replace">
+                    <field name="bank_account_id"/>
+                    <field name="hr_address_w3w"/>
+                    <field name="hr_is_tuico_member"/>
+                    <field name="hr_tuico_joining_date"/>
+                    <field name="hr_nssf_id"/>
+                    <field name="hr_nssf_enrolment_date"/>
+                    <field name="hr_paye_id"/>
+                    <field name="hr_paye_enrolment_date"/>
+                    <field name="hr_address"/>
+                    <field name="hr_place_of_recruitment"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
+
+</openerp>

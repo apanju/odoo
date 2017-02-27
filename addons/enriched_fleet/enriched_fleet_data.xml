@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+      <!--
+      <record forcecreate="True" id="ir_cron_service_services_reminders" model="ir.cron">
+        <field name="name">Creation of Vehicle services and Services renewals reminders</field>
+        <field eval="True" name="active" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field eval="False" name="doall" />
+        <field eval="'fleet.vehicle'" name="model" />
+        <field eval="'run_scheduler'" name="function" />
+        <field eval="'()'" name="args" />
+      </record>
+    -->
+
+        <record id="model_boxer" model="fleet.vehicle.model">
+            <field name="modelname">Boxer</field>
+            <field name="brand_id" ref="brand_bajaj" />
+        </record>
+        <record id="model_boxer_bm_150" model="fleet.vehicle.model">
+            <field name="modelname">Boxer BM 150</field>
+            <field name="brand_id" ref="brand_bajaj" />
+        </record>
+        <record id="model_boxer_bm_100" model="fleet.vehicle.model">
+            <field name="modelname">Boxer BM 100</field>
+            <field name="brand_id" ref="brand_bajaj" />
+        </record>
+        <record id="model_ct100" model="fleet.vehicle.model">
+            <field name="modelname">CT100</field>
+            <field name="brand_id" ref="brand_bajaj" />
+        </record>
+        <record id="model_400sm" model="fleet.vehicle.model">
+            <field name="modelname">400SM</field>
+            <field name="brand_id" ref="brand_suzuki" />
+        </record>
+        <record id="model_maruti" model="fleet.vehicle.model">
+            <field name="modelname">Maruti</field>
+            <field name="brand_id" ref="brand_suzuki" />
+        </record>
+        <record id="model_tfl" model="fleet.vehicle.model">
+            <field name="modelname">TFL</field>
+            <field name="brand_id" ref="brand_tata" />
+        </record>
+        <record id="model_corolla" model="fleet.vehicle.model">
+            <field name="modelname">Corolla</field>
+            <field name="brand_id" ref="fleet.brand_toyota" />
+        </record>
+        <record id="model_opa" model="fleet.vehicle.model">
+            <field name="modelname">Opa</field>
+            <field name="brand_id" ref="fleet.brand_toyota" />
+        </record>
+        <record id="model_prado" model="fleet.vehicle.model">
+            <field name="modelname">Prado</field>
+            <field name="brand_id" ref="fleet.brand_toyota" />
+        </record>
+        <record id="model_rav4" model="fleet.vehicle.model">
+            <field name="modelname">Rav 4</field>
+            <field name="brand_id" ref="fleet.brand_toyota" />
+        </record>
+        <record id="model_dcm" model="fleet.vehicle.model">
+            <field name="modelname">DCM</field>
+            <field name="brand_id" ref="fleet.brand_toyota" />
+        </record>
+        <record id="model_nadia" model="fleet.vehicle.model">
+            <field name="modelname">Nadia</field>
+            <field name="brand_id" ref="fleet.brand_toyota" />
+        </record>
+        <record id="model_pickup" model="fleet.vehicle.model">
+            <field name="modelname">Pickup</field>
+            <field name="brand_id" ref="fleet.brand_nissan" />
+        </record>
+        <record id="model_s500" model="fleet.vehicle.model">
+            <field name="modelname">S 500</field>
+            <field name="brand_id" ref="fleet.brand_mercedes" />
+        </record>
+
+
+
+     </data>
+</openerp>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Phase types -->
+        <record id="project_phase_search" model="ir.ui.view">
+            <field name="name">enriched_project.phase.type.search</field>
+            <field name="model">enriched_project.project_phase</field>
+            <field name="arch" type="xml">
+                <search string="Project Phases">
+                   <field name="name" string="Project Phases"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="phase_type_edit" model="ir.ui.view">
+            <field name="name">enriched_project.phase.type.form</field>
+            <field name="model">enriched_project.project_phase</field>
+            <field name="arch" type="xml">
+                <form string="Project Phase">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                        </group>
+                    </group>
+                    <field name="description" placeholder="Add a description..."/>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_phase_tree" model="ir.ui.view">
+            <field name="name">enriched_project.phase.type.tree</field>
+            <field name="model">enriched_project.project_phase</field>
+            <field name="arch" type="xml">
+                <tree string="Project Phase">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_project_phase_form" model="ir.actions.act_window">
+            <field name="name">Phases</field>
+            <field name="res_model">enriched_project.project_phase</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="project_phase_tree"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a stage in the project pipeline.
+              </p><p>
+                Define the steps that will be used in the project from the
+                creation of the task, up to the closing of the task or issue.
+                You will use these stages in order to track the progress in
+                completing the project.
+              </p>
+            </field>
+        </record>
+
+        <record id="view_employee_form_enriched_inherit" model="ir.ui.view">
+            <field name="name">project.project.form.enriched.form.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='project_stages']" position="after">
+                    <page string="DSM Glass Works">
+                        <group string="State" name="state">
+                            <field name="project_state" class="oe_inline"/>
+                        </group>
+                        <group string="Roles" name="roled">
+                            <field name="role_client_qs_id" class="oe_inline"/>
+                            <field name="role_client_architect_id" class="oe_inline"/>
+                            <field name="role_client_main_contractor_id" class="oe_inline"/>
+                            <field name="role_qs_id" class="oe_inline"/>
+                            <field name="role_main_fundi_id" class="oe_inline"/>
+                            <field name="role_primary_supervisor_id" class="oe_inline"/>
+                        </group>
+                        <group string="Internal Details" name="details">
+                            <field name="project_number" class="oe_inline"/>
+                            <field name="priority" class="oe_inline"/>
+                            <field name="accounting_book" class="oe_inline"/>
+                        </group>
+                        <group string="Key Dates" name="key_dates">
+                            <field name="advance_payment_received" class="oe_inline"/>
+                            <field name="completion_certificate_received" class="oe_inline"/>
+                            <field name="final_payment" class="oe_inline"/>
+                            <field name="retention" class="oe_inline"/>
+                            <field name="file_closed" class="oe_inline"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_project_kanban_enriched_inherit" model="ir.ui.view">
+            <field name="name">project.project.kanban.enriched.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban" position="replace">
+                    <kanban class="oe_background_grey" default_group_by="project_state">
+                        <field name="effective_hours"/>
+                        <field name="planned_hours"/>
+                        <field name="name"/>
+                        <field name="members"/>
+                        <field name="use_tasks"/>
+                        <field name="user_id"/>
+                        <field name="date"/>
+                        <field name="color"/>
+                        <field name="task_count"/>
+                        <field name="task_ids"/>
+                        <field name="alias_id"/>
+                        <field name="alias_name"/>
+                        <field name="alias_domain"/>
+                        <field name="doc_count"/>
+                        <field name="priority"/>
+                        <field name="accounting_book"/>
+                        <templates>
+                            <t t-name="kanban-box">
+                                <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_project oe_kanban_global_click">
+                                    <div class="oe_dropdown_toggle oe_dropdown_kanban" groups="base.group_user">
+                                        <span class="oe_e">í</span>
+                                        <ul class="oe_dropdown_menu">
+                                            <t t-if="widget.view.is_action_enabled('edit')"><li><a type="edit">Project Settings</a></li></t>
+                                            <t t-if="widget.view.is_action_enabled('delete')"><li><a type="delete">Delete</a></li></t>
+                                            <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_kanban_content">
+                                        <h4 class="text-center"><strong><field name="name"/></strong></h4>
+                                        <div class="text-center oe_kanban_alias" t-if="record.alias_name.value and record.alias_domain.value">
+                                            <small><i class="fa fa-envelope-o"></i> <field name="alias_id"/></small>
+                                        </div>
+                                        <div class="oe_kanban_project_list">
+                                            <a t-if="record.use_tasks.raw_value" name="%(project.act_project_project_2_project_task_all)d" type="action" style="margin-right: 10px">
+                                                <t t-raw="record.task_count.raw_value"/> Tasks
+                                            </a>
+                                        </div>
+                                        <div class="oe_kanban_project_list">
+                                            <a t-if="record.doc_count.raw_value" name="attachment_tree_view" type="object" style="margin-right: 10px"> <field name="doc_count"/> Documents</a>
+                                        </div>
+                                        <div class="oe_kanban_footer_left">
+                                            <span groups="project.group_time_work_estimation_tasks">
+                                                <span class="oe_e">R</span>
+                                                <t t-esc="Math.round(record.effective_hours.raw_value)"/>/<t t-esc="Math.round(record.planned_hours.raw_value)"/> <field name="company_uom_id"/>
+                                            </span>
+                                            <span t-if="record.date.raw_value">
+                                                <span class="oe_e">N</span>
+                                                <field name="date"/>
+                                            </span>
+                                            <field name="accounting_book"/>
+                                        </div>
+                                        <div class="oe_kanban_bottom_right">
+                                            <div class="pull-left" groups="base.group_user">
+                                                <field name="priority" widget="priority"/>
+                                            </div>
+                                        </div>
+                                        <div class="oe_kanban_project_avatars">
+                                            <t t-foreach="record.members.raw_value.slice(0,11)" t-as="member">
+                                                <img t-att-src="kanban_image('res.users', 'image_small', member)" t-att-data-member_id="member"/>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </templates>
+                    </kanban>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem action="open_project_phase_form" name="Project Phases" id="menu_project_phase_view" parent="base.menu_definitions" sequence="3" groups="project.group_project_manager"/>
+
+    </data>
+</openerp>

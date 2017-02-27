@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="brand_bajaj" model="fleet.vehicle.model.brand">
+            <field name="name">Bajaj</field>
+            <field name="image" type="base64" file="enriched_fleet/static/img/brand_bajaj-image.png"/>
+        </record>
+        <record id="brand_b2india" model="fleet.vehicle.model.brand">
+            <field name="name">B-2india</field>
+            <field name="image" type="base64" file="enriched_fleet/static/img/brand_b2india-image.png"/>
+        </record>
+        <record id="brand_suzuki" model="fleet.vehicle.model.brand">
+            <field name="name">Suzuki</field>
+            <field name="image" type="base64" file="enriched_fleet/static/img/brand_suzuki-image.png"/>
+        </record>
+        <record id="brand_tata" model="fleet.vehicle.model.brand">
+            <field name="name">Tata</field>
+            <field name="image" type="base64" file="enriched_fleet/static/img/brand_tata-image.png"/>
+        </record>
+        <record id="brand_yamaha" model="fleet.vehicle.model.brand">
+            <field name="name">Yamaha</field>
+            <field name="image" type="base64" file="enriched_fleet/static/img/brand_yamaha-image.png"/>
+        </record>
+    </data>
+</openerp>

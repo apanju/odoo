@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="enriched assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/enriched_mods/static/src/css/enriched.css"/>
+                <script type="text/javascript" src="/enriched_mods/static/src/js/enriched.js"></script>
+            </xpath>
+        </template>
+        <template id="enriched_mods.web_layout" inherit_id="web.layout" name="Enriched Layout">
+            <xpath expr="//title" position="replace">
+                <title>OMS | DSM Glass Works</title>
+            </xpath>
+        </template>
+        <template id="enriched_mods.login_layout" inherit_id="web.login_layout" name="Enriched Login">
+            <xpath expr="//div[@class='oe_single_form_footer']" position="replace">
+                <div class="oe_single_form_footer">Powered by Enriched Solutions Ltd.</div>
+            </xpath>
+            <!--<xpath expr="//div[@class='oe_single_form_logo']" position="replace">
+                <div class="oe_single_form_logo">
+                    <img src="/enriched_mods/static/src/img/EnrichedBack_small.png"
+                         alt="Enriched Logo"
+                         title="Enriched Logo" />
+                </div>
+            </xpath>-->
+        </template>
+    </data>
+</openerp>

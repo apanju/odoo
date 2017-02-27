@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem name="OMS Management" id="menu_oms_links_system" parent="base.menu_administration" groups="base.group_system" sequence="10"/>
+        <menuitem name="Data Import" id="menu_oms_links_data" parent="base.menu_administration" groups="base.group_user" sequence="20"/>
+
+        <record id="open_link_issue_tracker" model="ir.actions.act_url">
+            <field name="name">Open Issue Tracker</field>
+            <field name="url">https://enriched.atlassian.net</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="open_link_upload_biometric" model="ir.actions.act_url">
+            <field name="name">Upload Biometric Data File</field>
+            <field name="url">http://enrichedsolutions.com/dsmglass/biometric.php</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="open_link_issue_tracker" name="Report Issue" id="menu_oms_report_issue" parent="enriched_mods.menu_oms_links_system" groups="base.group_system" sequence="10"/>
+        <menuitem action="open_link_upload_biometric" name="Upload Biometric data" id="menu_oms_upload_biometric" parent="enriched_mods.menu_oms_links_data" groups="base.group_user" sequence="20"/>
+
+    </data>
+</openerp>

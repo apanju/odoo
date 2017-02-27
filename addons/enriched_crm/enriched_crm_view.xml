@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_partners_form_enriched_crm" model="ir.ui.view">
+            <field name="name">view.res.partner.form.enriched_crm.inherited</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field eval="18" name="priority"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook/page[last()]" position="after">
+                        <page string="DSM Glass Works">
+                            <group string="Tanzania" name="tnz">
+                                <field name="tin_number" class="oe_inline"/>
+                                <field name="vrn_number" class="oe_inline"/>
+                            </group>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+
+    </data>
+
+
+</openerp>
